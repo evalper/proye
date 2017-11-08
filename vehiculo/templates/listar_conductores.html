@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content container">
+       <div class="row">
+           <div class="col-md-8">
+               {% for con in con %}
+                   <div class="post">
+                       <div class="date">
+                       </div>
+                       <h1><a href="{%url 'detalle_conductor' pk=con.pk  %}">{{ con.nombre }}</a></h1>
+
+                   </div>
+               {% endfor %}
+           </div>
+       </div>
+   </div>
+ {% endblock content %}

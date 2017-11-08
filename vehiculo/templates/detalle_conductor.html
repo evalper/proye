@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="post">
+        </div>
+
+        <tr><a href="{% url 'editar_conductor' pk=p.pk %}"class="btn btn-default"><span class="glyphicon glyphicon-edit"></span></a></tr>
+
+    <h1>{{p.nombre}}</h1>
+    
+  </div>
+
+   {% endblock content %}

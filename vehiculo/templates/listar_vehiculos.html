@@ -1,0 +1,10 @@
+<div class="content container">
+       <div class="row">
+           <div class="col-md-8">
+               {% for vh in vh %}
+                       <form method="POST" class="post-form">{% csrf_token %}
+                       <h1><a href="{%url 'vehiculo_detalle' pk=vh.pk %}">{{ vh.modelo }}  </a></h1>
+                   </div>
+               {% endfor %}
+           </div>
+       </div>
