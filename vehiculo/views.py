@@ -3,7 +3,7 @@ from django.contrib import messages
 from .forms import VehiculoForm, ConductorForm
 from vehiculo.models import Vehiculo, Conductor, Alquiler
 from django.contrib.auth.decorators import login_required
-
+@login_required
 def vehiculo_nuevo(request):
     if request.method=="POST":
         formulario=VehiculoForm(request.POST)
@@ -20,7 +20,7 @@ def vehiculo_nuevo(request):
     else:
         formulario = VehiculoForm()
     return render(request, 'vehiculo_editar.html', {'formulario': formulario})
-
+@login_required
 def conductor_nuevo(request):
   if request.method == "POST":
      formulario = ConductorForm(request.POST)
@@ -30,7 +30,7 @@ def conductor_nuevo(request):
   else:
       formulario = ConductorForm()
   return render(request, 'conductor_nuevo.html', {'formulario': formulario})
-
+@login_required
 def editar_conductor(request, pk):
     conductor = get_object_or_404(conductor, pk=pk)
     if request.method == "POST":
@@ -42,7 +42,7 @@ def editar_conductor(request, pk):
     else:
        formulario = conductorForm(instance=conductor)
     return render(request, 'conductor_nuevo.html', {'formulario': formulario})
-
+@login_required
 def editar_conductor(request, pk):
     conduc = get_object_or_404(Conductor, pk=pk)
     if request.method == "POST":

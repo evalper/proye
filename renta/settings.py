@@ -26,7 +26,7 @@ SECRET_KEY = '2xmmyn(j3q(4kwmvo8(ke$d8kqdjs-n=xkqgz%kc6gj+h5sv(3'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_REDIRECT_URL = '/'
 
 # Application definition
 
@@ -119,3 +119,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
